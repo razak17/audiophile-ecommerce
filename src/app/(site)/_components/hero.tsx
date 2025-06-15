@@ -8,18 +8,18 @@ const Hero = () => {
 			<div className="px-6 md:px-8 lg:px-12 xl:px-24">
 				<div className="flex min-h-[600px] flex-col items-center lg:min-h-[700px] lg:flex-row">
 					<div className="flex-1 py-12 text-center lg:py-0 lg:pr-12 lg:text-left">
-						<p className="upper mb-4 text-sm font-normal tracking-[10px] text-yellow-600 uppercase">
+						<p className="mb-4 text-sm tracking-[10px] text-yellow-600 uppercase">
 							New Product
 						</p>
-						<h1 className="mb-6 text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">
+						<h1 className="mb-6 text-4xl font-bold md:text-5xl lg:text-6xl">
 							{heroData.product}
 						</h1>
-						<p className="mx-auto mb-8 max-w-md text-lg leading-relaxed text-gray-300 lg:mx-0">
+						<p className="mx-auto mb-8 max-w-md text-lg text-gray-300 lg:mx-0">
 							{heroData.description}
 						</p>
 						<Link
-							href={`/headphone/${heroData.id}`}
-							className="bg-yellow-600 px-8 py-4 font-bold tracking-wider text-white uppercase hover:bg-yellow-500"
+							href={`/headphones/${heroData.id}`}
+							className="bg-yellow-600 px-8 py-4 font-bold text-white uppercase hover:bg-yellow-500"
 						>
 							{heroData.cta}
 						</Link>

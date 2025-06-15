@@ -1,26 +1,41 @@
 "use client";
 
 import { navItems } from "@/utils/data";
-import { ShoppingCart } from "lucide-react";
+import { Menu, ShoppingCart, X } from "lucide-react";
 import Link from "next/link";
 import NavItem from "./ui/nav-item";
+import { useState } from "react";
 
 const Navbar = () => {
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const totalItems = 0; // Replace with actual cart item count logic
+
+	const toggleMenu = () => {
+		setIsMenuOpen((prev) => !prev);
+	};
 
 	return (
 		<nav className="bg-black text-white">
 			<div className="flex h-24 items-center justify-between px-6 py-4 lg:px-8">
+				<button
+					className="cursor-pointer text-white md:hidden"
+					onClick={toggleMenu}
+				>
+					{isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+				</button>
+
 				<Link href="/" className="text-2xl font-bold tracking-wider text-white">
 					audiophile
 				</Link>
+
 				<div className="hidden space-x-8 md:flex">
 					{navItems.map((item) => (
 						<NavItem key={item.name} href={item.href} name={item.name} />
 					))}
 				</div>
+
 				<div
-					className="relative cursor-pointer text-white transition-colors duration-300 hover:text-yellow-500"
+					className="relative cursor-pointer text-white hover:text-yellow-500"
 					onClick={() => {}}
 				>
 					<ShoppingCart size={23} />
@@ -30,6 +45,22 @@ const Navbar = () => {
 						</span>
 					)}
 				</div>
+
+				{isMenuOpen && (
+					<div className="absolute top-24 right-0 left-0 z-50 border-t bg-white md:hidden">
+						<div className="flex flex-col space-y-4 p-6">
+							{navItems.map((item) => (
+								<Link
+									key={item.name}
+									href={item.href}
+									className="text-sm font-bold text-black hover:text-yellow-500"
+								>
+									{item.name.toUpperCase()}
+								</Link>
+							))}
+						</div>
+					</div>
+				)}
 			</div>
 		</nav>
 	);

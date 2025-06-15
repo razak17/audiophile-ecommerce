@@ -14,7 +14,7 @@ const BrandLink = ({
 	return (
 		<Link
 			href={href}
-			className="text-white transition-colors duration-300 hover:text-yellow-500"
+			className="text-white hover:text-yellow-500"
 			aria-label={label}
 		>
 			{icon && <>{icon}</>}
