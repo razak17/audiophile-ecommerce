@@ -1,4 +1,7 @@
-import desktopHeroImage from "../assets/home/desktop/image-hero-no-bg.png";
+import desktopHeroImage from "../assets/images/hero-no-bg.png";
+import headPhoneCategoryImage from "../assets/images/categories/headphones/headphones.png";
+import speakerCategoryImage from "../assets/images/categories/speakers/speakers.png";
+import earphoneCategoryImage from "../assets/images/categories/earphones/earphones.png";
 
 export const navItems = [
 	{ name: "home", href: "/" },
@@ -15,3 +18,21 @@ export const heroData = {
 	cta: "See Product",
 	image: desktopHeroImage,
 };
+
+export const productCategories = [
+	{
+		title: "headphones",
+		image: headPhoneCategoryImage,
+		href: "/headphones",
+	},
+	{
+		title: "speakers",
+		image: speakerCategoryImage,
+		href: "/speakers",
+	},
+	{
+		title: "earphones",
+		image: earphoneCategoryImage,
+		href: "/earphones",
+	},
+];
