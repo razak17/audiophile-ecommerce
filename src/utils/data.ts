@@ -36,3 +36,13 @@ export const productCategories = [
 		href: "/earphones",
 	},
 ];
+
+export const mainShowcaseProduct = {
+	id: 1,
+	title: "ZX9 speaker",
+	category: "speakers",
+	description:
+		"Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.",
+	image: speakerCategoryImage,
+	cta: "See Product",
+};
