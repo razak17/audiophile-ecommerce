@@ -1,7 +1,9 @@
-export default function Home() {
+export default function EarphonesPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <p>Hi Mom!</p>
+      {/* Nav */}
+      <p>EarphonesPage</p>
     </div>
   );
 }
+

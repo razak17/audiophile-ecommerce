@@ -1,0 +1,22 @@
+{
+  "lsp": {
+    "override": ["typescript-tools", "eslint", "jsonls"],
+    "disabled": {
+      "servers": ["tailwindcss", "emmet_language_server"]
+    }
+  },
+  "plugin": {
+    "custom": {
+      "baredot": { "enable": false }
+    }
+  },
+  "explorer": {
+    "variant": "neo-tree"
+  },
+  "plugins": {
+    "disabled": [],
+    "modules": {
+      "disabled": []
+    }
+  }
+}
