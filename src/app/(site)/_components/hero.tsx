@@ -17,7 +17,7 @@ const Hero = () => {
 						<p className="mx-auto mb-8 max-w-md text-lg text-gray-300 lg:mx-0">
 							{heroData.description}
 						</p>
-						<Link href={`/products/${heroData.category}/${heroData.id}`}>
+						<Link href={`/products/${heroData.category}/${heroData.slug}`}>
 							<span className="bg-yellow-600 px-8 py-4 font-bold text-white uppercase hover:bg-yellow-500">
 								{heroData.cta ?? "See Product"}
 							</span>
