@@ -49,7 +49,7 @@ const OtherShowcase = ({ products }: { products: Product[] }) => {
 									{secondaryShowcase.name}
 								</h2>
 								<Link
-									href={`/${secondaryShowcase.category}/${secondaryShowcase.id}`}
+									href={`/products/${secondaryShowcase.category}/${secondaryShowcase.id}`}
 								>
 									<span className="border border-black bg-transparent px-4 py-2 text-xs font-medium tracking-wide text-black uppercase transition-all duration-300 hover:bg-black hover:text-white sm:px-6 sm:py-2.5 sm:text-sm">
 										{secondaryShowcase.cta ?? "See Product"}
@@ -77,7 +77,9 @@ const OtherShowcase = ({ products }: { products: Product[] }) => {
 								<h2 className="mb-8 text-2xl font-bold tracking-wide text-black uppercase md:text-3xl lg:text-4xl">
 									{finalShowcase.name}
 								</h2>
-								<Link href={`/${finalShowcase.category}/${finalShowcase.id}`}>
+								<Link
+									href={`/products/${finalShowcase.category}/${finalShowcase.id}`}
+								>
 									<span className="w-fit border border-black bg-transparent px-6 py-2.5 text-sm font-medium tracking-wide text-black uppercase transition-all duration-300 hover:bg-black hover:text-white">
 										{finalShowcase.cta ?? "See Product"}
 									</span>

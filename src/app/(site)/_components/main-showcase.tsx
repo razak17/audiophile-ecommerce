@@ -42,7 +42,7 @@ const MainShowcase = ({ product }: { product: Product }) => {
 						</p>
 						<div className="flex justify-center lg:justify-start">
 							<Link
-								href={`/${product.category}/${product.id}`}
+								href={`/products/${product.category}/${product.id}`}
 								className="bg-black px-8 py-4 font-bold tracking-wider text-white uppercase transition-colors duration-300 hover:bg-gray-800"
 							>
 								{product.cta ?? "See Product"}

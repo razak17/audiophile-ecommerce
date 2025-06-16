@@ -53,9 +53,9 @@ const Navbar = () => {
 								<Link
 									key={item.name}
 									href={item.href}
-									className="text-sm font-bold text-black hover:text-yellow-500"
+									className="text-sm font-bold text-black uppercase hover:text-yellow-500"
 								>
-									{item.name.toUpperCase()}
+									{item.name}
 								</Link>
 							))}
 						</div>
