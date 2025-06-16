@@ -36,7 +36,7 @@ Your solution should allow users to:
 
 ### Bonus:
 
-- [ ] Persist cart state after page refresh (e.g., using localStorage if not building a full-stack app).
+- Persist cart state after page refresh (e.g., using localStorage if not building a full-stack app).
 
 ### Deployment Instructions
 
