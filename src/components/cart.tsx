@@ -1,16 +1,12 @@
 import { useCart } from "@/context/cart-context";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const Cart = () => {
 	const router = useRouter();
-	const {
-		cart,
-		toggleCart,
-		updateCartItemQuantity,
-		getTotalPrice,
-		clearCart,
-	} = useCart();
+	const { cart, toggleCart, updateCartItemQuantity, getTotalPrice, clearCart } =
+		useCart();
 
 	const handleCheckout = () => {
 		if (cart.length === 0) {
@@ -107,25 +103,12 @@ const Cart = () => {
 								</span>
 							</div>
 							<button
-								className="flex w-full items-center justify-center rounded-md bg-yellow-600 px-6 py-3 font-bold text-white uppercase transition-colors duration-200 hover:bg-yellow-500"
+								className="flex w-full cursor-pointer items-center justify-center rounded-md bg-yellow-600 px-6 py-3 font-bold text-white uppercase transition-colors duration-200 hover:bg-yellow-500"
 								onClick={handleCheckout}
 								disabled={cart.length === 0}
 							>
 								Checkout
-								<svg
-									className="ml-2 h-4 w-4"
-									fill="none"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										strokeWidth={2}
-										d="M14 5l7 7m0 0l-7 7m7-7H3"
-									/>
-								</svg>
+								<ArrowRight size={18} style={{ marginLeft: "8px" }} />
 							</button>
 						</div>
 					</>

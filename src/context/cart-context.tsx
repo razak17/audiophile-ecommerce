@@ -3,7 +3,7 @@
 import { Product } from "@/utils/data";
 import React, { createContext, useState, useEffect, ReactNode } from "react";
 
-type CartItem = Product & {
+export type CartItem = Product & {
 	quantity: number;
 };
 
