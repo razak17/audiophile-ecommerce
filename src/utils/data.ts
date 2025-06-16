@@ -20,9 +20,9 @@ export type Product = {
 
 export const navItems = [
 	{ name: "home", href: "/" },
-	{ name: "headphones", href: "/headphones" },
-	{ name: "speakers", href: "/speakers" },
-	{ name: "earphones", href: "/earphones" },
+	{ name: "headphones", href: "/collections/headphones" },
+	{ name: "speakers", href: "/collections/speakers" },
+	{ name: "earphones", href: "/collections/earphones" },
 ];
 
 export const heroData: Product = {
@@ -38,17 +38,17 @@ export const productCategories = [
 	{
 		title: "headphones",
 		image: headPhoneCategoryImage,
-		href: "/headphones",
+		href: "/collections/headphones",
 	},
 	{
 		title: "speakers",
 		image: speakerCategoryImage,
-		href: "/speakers",
+		href: "/collections/speakers",
 	},
 	{
 		title: "earphones",
 		image: earphoneCategoryImage,
-		href: "/earphones",
+		href: "/collections/earphones",
 	},
 ];
 
