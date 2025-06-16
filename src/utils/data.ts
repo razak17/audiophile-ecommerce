@@ -5,6 +5,7 @@ import headPhoneCategoryImage from "../assets/images/categories/headphones/headp
 import speakerShowcaseImage from "../assets/images/categories/speakers/speaker-zx7.png";
 import speakerCategoryImage from "../assets/images/categories/speakers/speakers.png";
 import desktopHeroImage from "../assets/images/hero-no-bg.png";
+import bannerImage from "../assets/images/banner.jpg";
 
 export type ProductCategories = "headphones" | "speakers" | "earphones";
 
@@ -78,3 +79,9 @@ export const otherProductShowcase: Product[] = [
 		image: earphoneShowcaseImage,
 	},
 ];
+
+export const bannerData = {
+	description:
+		"Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.",
+	image: bannerImage,
+};
