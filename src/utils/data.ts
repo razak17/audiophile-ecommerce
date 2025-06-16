@@ -2,19 +2,34 @@ import { StaticImageData } from "next/image";
 import bannerImage from "../assets/images/banner.jpg";
 import earphoneShowcaseImage from "../assets/images/categories/earphones/earphone-yx1.jpg";
 import earphoneCategoryImage from "../assets/images/categories/earphones/earphones.png";
+import YX1WirelessGalleryOne from "../assets/images/categories/earphones/products/yx1-wireless-gallery-1.png";
+import YX1WirelessGalleryTwo from "../assets/images/categories/earphones/products/yx1-wireless-gallery-2.png";
+import YX1WirelessGalleryThree from "../assets/images/categories/earphones/products/yx1-wireless-gallery-3.png";
 import YX1Wireless from "../assets/images/categories/earphones/products/yx1-wireless.png";
 import headPhoneCategoryImage from "../assets/images/categories/headphones/headphones.png";
+import XX59WhiteGalleryOne from "../assets/images/categories/headphones/products/x59-white-gallery-1.png";
+import XX59WhiteGalleryTwo from "../assets/images/categories/headphones/products/x59-white-gallery-2.png";
+import XX59WhiteGalleryThree from "../assets/images/categories/headphones/products/x59-white-gallery-3.png";
 import XX59White from "../assets/images/categories/headphones/products/x59-white.png";
+import XX99MarkOneGalleryOne from "../assets/images/categories/headphones/products/x99-mark-one-gallery-1.png";
+import XX99MarkOneGalleryTwo from "../assets/images/categories/headphones/products/x99-mark-one-gallery-2.png";
+import XX99MarkOneGalleryThree from "../assets/images/categories/headphones/products/x99-mark-one-gallery-3.png";
 import XX99MarkOne from "../assets/images/categories/headphones/products/x99-mark-one.png";
+import XX99MarkTwoGalleryOne from "../assets/images/categories/headphones/products/x99-mark-two-gallery-1.png";
+import XX99MarkTwoGalleryTwo from "../assets/images/categories/headphones/products/x99-mark-two-gallery-2.png";
+import XX99MarkTwoGalleryThree from "../assets/images/categories/headphones/products/x99-mark-two-gallery-3.png";
 import XX99MarkTwo from "../assets/images/categories/headphones/products/x99-mark-two.png";
+import ZX7BlackGalleryOne from "../assets/images/categories/speakers/products/zx7-black-gallery-1.png";
+import ZX7BlackGalleryTwo from "../assets/images/categories/speakers/products/zx7-black-gallery-2.png";
+import ZX7BlackGalleryThree from "../assets/images/categories/speakers/products/zx7-black-gallery-3.png";
 import ZX7Black from "../assets/images/categories/speakers/products/zx7-black.png";
+import ZX9BlackGalleryOne from "../assets/images/categories/speakers/products/zx9-black-gallery-1.jpg";
+import ZX9BlackGalleryTwo from "../assets/images/categories/speakers/products/zx9-black-gallery-2.jpg";
+import ZX9BlackGalleryThree from "../assets/images/categories/speakers/products/zx9-black-gallery-3.jpg";
 import ZX9Black from "../assets/images/categories/speakers/products/zx9-black.png";
 import speakerShowcaseImage from "../assets/images/categories/speakers/speaker-zx7.png";
 import speakerCategoryImage from "../assets/images/categories/speakers/speakers.png";
 import desktopHeroImage from "../assets/images/hero-no-bg.png";
-import XX99MarkTwoGalleryOne from "../assets/images/categories/headphones/products/x99-mark-two-gallery-1.png";
-import XX99MarkTwoGalleryTwo from "../assets/images/categories/headphones/products/x99-mark-two-gallery-2.png";
-import XX99MarkTwoGalleryThree from "../assets/images/categories/headphones/products/x99-mark-two-gallery-3.png";
 
 export type ProductCategories = "headphones" | "speakers" | "earphones";
 
@@ -41,7 +56,6 @@ export type Product = {
 	category: ProductCategories;
 	new: boolean;
 	price: number;
-	quantity?: number;
 	description: string;
 	image: StaticImageData | string;
 	features?: string;
@@ -214,6 +228,20 @@ export const headphonesData: Product[] = [
 				item: "3.5mm 5m audio cable",
 			},
 		],
+		gallery: {
+			topLeft: {
+				image: XX99MarkOneGalleryOne,
+				alt: "Headphones on stand",
+			},
+			bottomLeft: {
+				image: XX99MarkOneGalleryTwo,
+				alt: "Headphones on desk setup",
+			},
+			right: {
+				image: XX99MarkOneGalleryThree,
+				alt: "Close-up view of headphones",
+			},
+		},
 	},
 	{
 		id: 4,
@@ -246,6 +274,20 @@ export const headphonesData: Product[] = [
 				item: "3.5mm 5m audio cable",
 			},
 		],
+		gallery: {
+			topLeft: {
+				image: XX59WhiteGalleryOne,
+				alt: "Person wearing headphones",
+			},
+			bottomLeft: {
+				image: XX59WhiteGalleryTwo,
+				alt: "Headphones on desk setup",
+			},
+			right: {
+				image: XX59WhiteGalleryThree,
+				alt: "Person holding headphones with finger",
+			},
+		},
 	},
 ];
 
@@ -285,6 +327,20 @@ export const speakersData: Product[] = [
 				item: "10m optical cable",
 			},
 		],
+		gallery: {
+			topLeft: {
+				image: ZX9BlackGalleryOne,
+				alt: "Close-up view of ZX9 speaker",
+			},
+			bottomLeft: {
+				image: ZX9BlackGalleryTwo,
+				alt: "ZX9 speaker in a living room",
+			},
+			right: {
+				image: ZX9BlackGalleryThree,
+				alt: "ZX9 speaker on a shelf",
+			},
+		},
 	},
 	{
 		id: 6,
@@ -321,6 +377,20 @@ export const speakersData: Product[] = [
 				item: "7.5m optical cable",
 			},
 		],
+		gallery: {
+			topLeft: {
+				image: ZX7BlackGalleryOne,
+				alt: "Close-up view of ZX7 speaker",
+			},
+			bottomLeft: {
+				image: ZX7BlackGalleryTwo,
+				alt: "ZX7 speaker in a sound studio",
+			},
+			right: {
+				image: ZX7BlackGalleryThree,
+				alt: "ZX7 speaker on a table",
+			},
+		},
 	},
 ];
 
@@ -360,6 +430,20 @@ export const earphonesData: Product[] = [
 				item: "Travel pouch",
 			},
 		],
+		gallery: {
+			topLeft: {
+				image: YX1WirelessGalleryOne,
+				alt: "earphones",
+			},
+			bottomLeft: {
+				image: YX1WirelessGalleryTwo,
+				alt: "earphones",
+			},
+			right: {
+				image: YX1WirelessGalleryThree,
+				alt: "earphones",
+			},
+		},
 	},
 ];
 
