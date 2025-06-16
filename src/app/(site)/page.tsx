@@ -1,13 +1,16 @@
+import ProductCategories from "../../components/product-categories";
 import Hero from "./_components/hero";
-import ProductCategories from "./_components/product-categories";
-import Showcase from "./_components/showcase";
+import { mainShowcaseProduct, otherProductShowcase } from "@/utils/data";
+import MainShowcase from "./_components/main-showcase";
+import OtherShowcase from "./_components/other-showcase";
 
 export default function Home() {
 	return (
 		<div className="flex flex-col">
 			<Hero />
 			<ProductCategories />
-      <Showcase />
+			<MainShowcase product={mainShowcaseProduct} />
+			<OtherShowcase products={otherProductShowcase} />
 		</div>
 	);
 }

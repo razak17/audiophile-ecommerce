@@ -1,7 +1,7 @@
 import { productCategories } from "@/utils/data";
-import Link from "next/link";
-import Image from "next/image";
 import { ChevronRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 const ProductCategories = () => {
 	return (

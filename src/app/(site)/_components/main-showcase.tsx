@@ -1,9 +1,9 @@
+import { Product } from "@/utils/data";
 import Image from "next/image";
 import Link from "next/link";
-import { mainShowcaseProduct } from "@/utils/data";
 import { Fragment } from "react";
 
-const MainShowcase = () => {
+const MainShowcase = ({ product }: { product: Product }) => {
 	return (
 		<div className="px-6 py-16 md:px-8 lg:px-12 xl:px-24">
 			<div className="mx-auto max-w-7xl">
@@ -22,32 +22,30 @@ const MainShowcase = () => {
 
 					<div className="relative z-10 mb-10 flex w-full items-center justify-center lg:mb-0 lg:w-1/2">
 						<Image
-							src={mainShowcaseProduct.image}
-							alt={mainShowcaseProduct.title}
+							src={product.image}
+							alt={product.name}
 							className="w-[180px] object-contain sm:w-[240px] md:w-[280px] lg:w-[350px]"
 						/>
 					</div>
 
 					<div className="z-10 w-full text-center text-white lg:w-1/2 lg:text-left">
 						<h2 className="mb-6 text-4xl font-bold uppercase md:text-5xl lg:text-6xl">
-							{mainShowcaseProduct.title
-								.split(" ")
-								.map((word, index, array) => (
-									<Fragment key={index}>
-										{word}
-										{index < array.length - 1 && <br />}
-									</Fragment>
-								))}
+							{product.name.split(" ").map((word, index, array) => (
+								<Fragment key={index}>
+									{word}
+									{index < array.length - 1 && <br />}
+								</Fragment>
+							))}
 						</h2>
 						<p className="mx-auto mb-8 max-w-md text-lg leading-relaxed opacity-90 md:text-xl lg:mx-0">
-							{mainShowcaseProduct.description}
+							{product.description}
 						</p>
 						<div className="flex justify-center lg:justify-start">
 							<Link
-								href={`/${mainShowcaseProduct.category}/${mainShowcaseProduct.id}`}
+								href={`/${product.category}/${product.id}`}
 								className="bg-black px-8 py-4 font-bold tracking-wider text-white uppercase transition-colors duration-300 hover:bg-gray-800"
 							>
-								{mainShowcaseProduct.cta}
+								{product.cta ?? "See Product"}
 							</Link>
 						</div>
 					</div>

@@ -12,16 +12,15 @@ const Hero = () => {
 							New Product
 						</p>
 						<h1 className="mb-6 text-4xl font-bold md:text-5xl lg:text-6xl">
-							{heroData.product}
+							{heroData.name}
 						</h1>
 						<p className="mx-auto mb-8 max-w-md text-lg text-gray-300 lg:mx-0">
 							{heroData.description}
 						</p>
-						<Link
-							href={`/headphones/${heroData.id}`}
-							className="bg-yellow-600 px-8 py-4 font-bold text-white uppercase hover:bg-yellow-500"
-						>
-							{heroData.cta}
+						<Link href={`/headphones/${heroData.id}`}>
+							<span className="bg-yellow-600 px-8 py-4 font-bold text-white uppercase hover:bg-yellow-500">
+								{heroData.cta ?? "See Product"}
+							</span>
 						</Link>
 					</div>
 					<div className="flex flex-1 justify-center py-8 lg:justify-end lg:py-0">
@@ -31,7 +30,7 @@ const Hero = () => {
 									width={500}
 									height={500}
 									src={heroData.image}
-									alt={heroData.product}
+									alt={heroData.name}
 									className="h-full max-h-[500px] w-full max-w-[500px] object-contain drop-shadow-2xl filter md:max-h-[600px] md:max-w-[600px] lg:max-h-[700px] lg:max-w-[700px]"
 								/>
 							</div>

@@ -1,7 +1,21 @@
-import desktopHeroImage from "../assets/images/hero-no-bg.png";
-import headPhoneCategoryImage from "../assets/images/categories/headphones/headphones.png";
-import speakerCategoryImage from "../assets/images/categories/speakers/speakers.png";
+import { StaticImageData } from "next/image";
+import earphoneShowcaseImage from "../assets/images/categories/earphones/earphone-yx1.jpg";
 import earphoneCategoryImage from "../assets/images/categories/earphones/earphones.png";
+import headPhoneCategoryImage from "../assets/images/categories/headphones/headphones.png";
+import speakerShowcaseImage from "../assets/images/categories/speakers/speaker-zx7.png";
+import speakerCategoryImage from "../assets/images/categories/speakers/speakers.png";
+import desktopHeroImage from "../assets/images/hero-no-bg.png";
+
+export type ProductCategories = "headphones" | "speakers" | "earphones";
+
+export type Product = {
+	id: number;
+	name: string;
+	category: ProductCategories;
+	description: string;
+	image: StaticImageData | string;
+	cta?: string;
+};
 
 export const navItems = [
 	{ name: "home", href: "/" },
@@ -10,12 +24,12 @@ export const navItems = [
 	{ name: "earphones", href: "/earphones" },
 ];
 
-export const heroData = {
+export const heroData: Product = {
 	id: 4,
-	product: "XX99 MARK II HEADPHONES",
+	name: "XX99 MARK II HEADPHONES",
+	category: "headphones",
 	description:
 		"Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.",
-	cta: "See Product",
 	image: desktopHeroImage,
 };
 
@@ -37,12 +51,30 @@ export const productCategories = [
 	},
 ];
 
-export const mainShowcaseProduct = {
+export const mainShowcaseProduct: Product = {
 	id: 1,
-	title: "ZX9 speaker",
+	name: "ZX9 speaker",
 	category: "speakers",
 	description:
 		"Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.",
 	image: speakerCategoryImage,
-	cta: "See Product",
 };
+
+export const otherProductShowcase: Product[] = [
+	{
+		id: 2,
+		name: "ZX7 speaker",
+		category: "speakers",
+		description:
+			"Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
+		image: speakerShowcaseImage,
+	},
+	{
+		id: 3,
+		name: "YX1 Wireless Earphones",
+		category: "earphones",
+		description:
+			"Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
+		image: earphoneShowcaseImage,
+	},
+];
