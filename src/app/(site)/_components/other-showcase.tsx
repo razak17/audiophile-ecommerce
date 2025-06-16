@@ -1,12 +1,30 @@
 "use client";
 
 import { Product } from "@/utils/data";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const OtherShowcase = ({ products }: { products: Product[] }) => {
 	const secondaryShowcase = products[0];
 	const finalShowcase = products[1];
+
+	const [currentWindowWidth, setCurrentWindowWidth] = useState(0);
+
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			const handleResize = () => {
+				setCurrentWindowWidth(window.innerWidth);
+			};
+
+			setCurrentWindowWidth(window.innerWidth);
+			window.addEventListener("resize", handleResize);
+
+			return () => {
+				window.removeEventListener("resize", handleResize);
+			};
+		}
+	}, []);
 
 	return (
 		<div>
@@ -17,10 +35,10 @@ const OtherShowcase = ({ products }: { products: Product[] }) => {
 							className="relative flex h-[180px] items-center overflow-hidden rounded-lg sm:h-[220px] md:h-[250px] lg:h-[280px] xl:h-[300px]"
 							style={{
 								backgroundColor: "#E0E0E0",
-								backgroundImage: `url(${secondaryShowcase.image})`,
-								// backgroundSize: window.innerWidth < 768 ? "cover" : "contain",
-								// backgroundPosition:
-								// 	window.innerWidth < 768 ? "center" : "center right",
+								backgroundImage: `url(${(secondaryShowcase.image as StaticImageData).src})`,
+								backgroundSize: currentWindowWidth < 768 ? "cover" : "contain",
+								backgroundPosition:
+									currentWindowWidth < 768 ? "center" : "center right",
 								backgroundRepeat: "no-repeat",
 							}}
 						>
