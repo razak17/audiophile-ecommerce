@@ -75,7 +75,7 @@ const CheckoutForm = ({
 			noValidate
 		>
 			<div className="space-y-4">
-				<h2 className="mb-4 text-sm font-bold tracking-wider text-[#D87D4A] uppercase">
+				<h2 className="mb-4 text-sm font-bold tracking-wider text-yellow-600 uppercase">
 					Billing Details
 				</h2>
 
@@ -118,7 +118,7 @@ const CheckoutForm = ({
 			</div>
 
 			<div className="space-y-4">
-				<h2 className="mb-4 text-sm font-bold tracking-wider text-[#D87D4A] uppercase">
+				<h2 className="mb-4 text-sm font-bold tracking-wider text-yellow-600 uppercase">
 					Shipping Info
 				</h2>
 
@@ -173,7 +173,7 @@ const CheckoutForm = ({
 			</div>
 
 			<div className="space-y-4">
-				<h2 className="mb-4 text-sm font-bold tracking-wider text-[#D87D4A] uppercase">
+				<h2 className="mb-4 text-sm font-bold tracking-wider text-yellow-600 uppercase">
 					Payment Details
 				</h2>
 
@@ -182,7 +182,7 @@ const CheckoutForm = ({
 
 					<div className="space-y-4">
 						<label
-							className={`flex items-center border p-4 ${formData.paymentMethod === "eMoney" ? "border-[#D87D4A] ring-2 ring-[#D87D4A]" : "border-gray-300"} cursor-pointer rounded-lg`}
+							className={`flex items-center border p-4 ${formData.paymentMethod === "eMoney" ? "border-yellow-600 ring-2 ring-yellow-600" : "border-gray-300"} cursor-pointer rounded-lg`}
 						>
 							<input
 								type="radio"
@@ -190,13 +190,13 @@ const CheckoutForm = ({
 								value="eMoney"
 								checked={formData.paymentMethod === "eMoney"}
 								onChange={handleChange}
-								className="h-5 w-5 text-[#D87D4A] focus:ring-[#D87D4A]"
+								className="h-5 w-5 text-yellow-600 focus:ring-yellow-600"
 							/>
 							<span className="ml-3 text-sm font-medium">e-Money</span>
 						</label>
 
 						<label
-							className={`flex items-center border p-4 ${formData.paymentMethod === "cash" ? "border-[#D87D4A] ring-2 ring-[#D87D4A]" : "border-gray-300"} cursor-pointer rounded-lg`}
+							className={`flex items-center border p-4 ${formData.paymentMethod === "cash" ? "border-yellow-600 ring-2 ring-yellow-600" : "border-gray-300"} cursor-pointer rounded-lg`}
 						>
 							<input
 								type="radio"
@@ -204,7 +204,7 @@ const CheckoutForm = ({
 								value="cash"
 								checked={formData.paymentMethod === "cash"}
 								onChange={handleChange}
-								className="h-5 w-5 text-[#D87D4A] focus:ring-[#D87D4A]"
+								className="h-5 w-5 text-yellow-600 focus:ring-yellow-600"
 							/>
 							<span className="ml-3 text-sm font-medium">Cash on Delivery</span>
 						</label>

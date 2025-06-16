@@ -1,14 +1,17 @@
 "use client";
 
-import CheckoutForm from "./_components/checkout-form";
-import { CustomerInfo, Order } from "@/types";
 import { useCart } from "@/context/cart-context";
-import { useState } from "react";
+import { CustomerInfo, Order } from "@/types";
+import { SHIPPING_FEE, VAT_RATE } from "@/utils/constants";
+import { useEffect, useState } from "react";
+import CheckoutConfirmationModal from "./_components/checkout-confirmation-modal";
+import CheckoutForm from "./_components/checkout-form";
 import CheckoutGoBack from "./_components/checkout-go-back";
+import OrderSummary from "./_components/order-summary";
+import { useRouter } from "next/navigation";
 
-const SHIPPING_FEE = 50;
-const VAT_RATE = 0.2;
 const CheckoutPage = () => {
+	const router = useRouter();
 	const { cart, clearCart } = useCart();
 	const [isLoading, setIsLoading] = useState(true);
 	const [showConfirmation, setShowConfirmation] = useState(false);
@@ -47,6 +50,24 @@ const CheckoutPage = () => {
 		}
 	};
 
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setIsLoading(false);
+			if (cart.length === 0 && !showConfirmation) {
+				router.push("/");
+			}
+		}, 1000);
+		return () => clearTimeout(timer);
+	}, [cart, showConfirmation, router]);
+
+	if (isLoading) {
+		return (
+			<div className="flex min-h-screen items-center justify-center bg-gray-50">
+				<div className="h-12 w-12 animate-spin rounded-full border-t-2 border-b-2 border-orange-500"></div>
+			</div>
+		);
+	}
+
 	return (
 		<div>
 			<div className="min-h-screen bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
@@ -58,10 +79,30 @@ const CheckoutPage = () => {
 							<CheckoutForm onSubmit={handleSubmit} />
 						</div>
 
-						{/* Order Summary */}
+						<div className="md:col-span-1">
+							<OrderSummary
+								items={cart}
+								subtotal={subtotal}
+								shipping={SHIPPING_FEE}
+								vat={vat}
+								grandTotal={grandTotal}
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
+
+			{/* Checkout Confirmation Modal */}
+			{showConfirmation && orderDetails && (
+				<CheckoutConfirmationModal
+					items={orderDetails.items}
+					grandTotal={orderDetails.grandTotal}
+					onClose={() => {
+						setShowConfirmation(false);
+						clearCart();
+					}}
+				/>
+			)}
 		</div>
 	);
 };

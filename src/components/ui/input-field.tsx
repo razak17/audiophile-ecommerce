@@ -35,7 +35,7 @@ export const InputField: React.FC<InputFieldProps> = ({
 			name={name}
 			value={value || ""}
 			onChange={onChange}
-			className={`w-full border px-4 py-3 ${error ? "border-red-500" : "border-gray-300"} rounded-lg focus:ring-2 focus:ring-[#D87D4A] focus:outline-none`}
+			className={`w-full border px-4 py-3 ${error ? "border-red-500" : "border-gray-300"} rounded-lg focus:ring-2 focus:ring-yellow-600 focus:outline-none`}
 			placeholder={placeholder}
 			required={required}
 		/>
