@@ -1,11 +1,8 @@
 "use client";
 
-import { Product } from "@/utils/data";
+import { CartItem } from "@/types";
+import { Product } from "@/types";
 import React, { createContext, useState, useEffect, ReactNode } from "react";
-
-export type CartItem = Product & {
-	quantity: number;
-};
 
 type CartContextType = {
 	cart: CartItem[];

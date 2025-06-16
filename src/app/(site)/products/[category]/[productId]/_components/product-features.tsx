@@ -1,4 +1,4 @@
-import { ProductItem } from "@/utils/data";
+import { ProductItem } from "@/types";
 
 const IncludedItem = ({
 	quantity,

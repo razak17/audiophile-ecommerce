@@ -1,24 +1,13 @@
 "use client";
 
-import CheckoutForm, { CustomerInfo } from "./_components/checkout-form";
-import { CartItem, useCart } from "@/context/cart-context";
+import CheckoutForm from "./_components/checkout-form";
+import { CustomerInfo, Order } from "@/types";
+import { useCart } from "@/context/cart-context";
 import { useState } from "react";
 import CheckoutGoBack from "./_components/checkout-go-back";
 
 const SHIPPING_FEE = 50;
 const VAT_RATE = 0.2;
-
-export type Order = {
-	customer: CustomerInfo;
-	items: Array<CartItem>;
-	subtotal: number;
-	shipping: number;
-	vat: number;
-	grandTotal: number;
-	orderNumber: string;
-	orderDate: string;
-};
-
 const CheckoutPage = () => {
 	const { cart, clearCart } = useCart();
 	const [isLoading, setIsLoading] = useState(true);

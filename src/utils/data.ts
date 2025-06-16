@@ -1,4 +1,4 @@
-import { StaticImageData } from "next/image";
+import { Product } from "@/types";
 import bannerImage from "../assets/images/banner.jpg";
 import earphoneShowcaseImage from "../assets/images/categories/earphones/earphone-yx1.jpg";
 import earphoneCategoryImage from "../assets/images/categories/earphones/earphones.png";
@@ -30,41 +30,6 @@ import ZX9Black from "../assets/images/categories/speakers/products/zx9-black.pn
 import speakerShowcaseImage from "../assets/images/categories/speakers/speaker-zx7.png";
 import speakerCategoryImage from "../assets/images/categories/speakers/speakers.png";
 import desktopHeroImage from "../assets/images/hero-no-bg.png";
-
-export type ProductCategories = "headphones" | "speakers" | "earphones";
-
-export type ProductItem = {
-	quantity: number;
-	item: string;
-};
-
-export type GallertItem = {
-	image: StaticImageData | string;
-	alt: string;
-};
-
-export type ProductGallery = {
-	topLeft: GallertItem;
-	bottomLeft: GallertItem;
-	right: GallertItem;
-};
-
-export type Product = {
-	id: number;
-	name: string;
-	slug: string;
-	category: ProductCategories;
-	new: boolean;
-	price: number;
-	description: string;
-	image: StaticImageData | string;
-	features?: string;
-	includes?: ProductItem[];
-	gallery?: ProductGallery;
-	others?: Product[];
-	cta?: string;
-	showcase?: boolean;
-};
 
 export const navItems = [
 	{ name: "home", href: "/" },

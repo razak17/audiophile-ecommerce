@@ -1,4 +1,4 @@
-import { GallertItem } from "@/utils/data";
+import { GalleryItem } from "@/types";
 import Image from "next/image";
 
 const ProductGallery = ({
@@ -6,9 +6,9 @@ const ProductGallery = ({
 	bottomLeftImage,
 	rightImage,
 }: {
-	topLeftImage: GallertItem;
-	bottomLeftImage: GallertItem;
-	rightImage: GallertItem;
+	topLeftImage: GalleryItem;
+	bottomLeftImage: GalleryItem;
+	rightImage: GalleryItem;
 }) => {
 	return (
 		<div className="mx-auto mb-20 max-w-6xl px-6 py-16">

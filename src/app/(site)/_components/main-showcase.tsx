@@ -1,4 +1,4 @@
-import { Product } from "@/utils/data";
+import { Product } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
