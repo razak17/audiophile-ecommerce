@@ -1,7 +1,9 @@
 import { navItems } from "@/utils/data";
-import { Facebook, Instagram, Twitter } from "lucide-react";
 import NavItem from "./ui/nav-item";
 import BrandLink from "./ui/brand-link";
+import FacebookIcon from "./icons/facebook-icon";
+import InstagramIcon from "./icons/instagram-icon";
+import TwitterIcon from "./icons/twitter-icon";
 
 const Footer = () => {
 	return (
@@ -33,20 +35,12 @@ const Footer = () => {
 
 						<div className="flex items-end justify-start lg:justify-end">
 							<div className="flex gap-4">
-								<BrandLink
-									href="#"
-									label="Facebook"
-									icon={<Facebook size={24} />}
-								/>
-								<BrandLink
-									href="#"
-									label="Twitter"
-									icon={<Twitter size={24} />}
-								/>
+								<BrandLink href="#" label="Facebook" icon={<FacebookIcon />} />
+								<BrandLink href="#" label="Twitter" icon={<TwitterIcon />} />
 								<BrandLink
 									href="#"
 									label="Instagram"
-									icon={<Instagram size={24} />}
+									icon={<InstagramIcon />}
 								/>
 							</div>
 						</div>
